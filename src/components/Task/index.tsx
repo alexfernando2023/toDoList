@@ -29,7 +29,7 @@ export function Task ( {description, onRemove, onCheck}: Props ) {
                 checked = {isChecked}
                 onPress = {()=> {
                     setIsChecked (!isChecked)
-                    onCheck(isChecked)
+                    onCheck(!isChecked)
                 }}
             />
             <Text style = {[styles.textTask, {
