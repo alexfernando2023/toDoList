@@ -29,7 +29,7 @@ export function Home () {
 
     function handleTaskAdd () {
         if (tasks.includes(taskName)) {
-            return Alert.alert ('Tarefa já existe!', 'Existe uma tarefa com a sua lista!')
+            return Alert.alert ('Tarefa já existe!', 'Existe uma tarefa com essa descrição já adicionada a sua lista!')
         }
 
         if (taskName === '') {
@@ -109,7 +109,7 @@ export function Home () {
                 data = {tasks}
                 keyExtractor = {item => uuidv4()}
                 renderItem = {({ item }) => (
-                    <Task 
+                    <Task
                         description = {item}
                         onRemove = {() => handleTaskRemove(item)}
                     />
