@@ -11,10 +11,9 @@ import trash from '../../assets/trash.png'
 type Props = {
     description: string,
     onRemove: () => void,
-    onCheck: (check: boolean) => void
 }
 
-export function Task ( {description, onRemove, onCheck}: Props ) {
+export function Task ( {description, onRemove}: Props ) {
 
     const [isChecked, setIsChecked] = useState (false)
 
@@ -29,7 +28,6 @@ export function Task ( {description, onRemove, onCheck}: Props ) {
                 checked = {isChecked}
                 onPress = {()=> {
                     setIsChecked (!isChecked)
-                    onCheck(!isChecked)
                 }}
             />
             <Text style = {[styles.textTask, {

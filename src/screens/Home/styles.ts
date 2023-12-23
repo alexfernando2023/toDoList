@@ -14,6 +14,17 @@ export const styles = StyleSheet.create ({
         paddingTop: 70,
         paddingBottom: 70
     },
+    buttonMode: {
+        position: 'absolute',
+        top: 75,
+        left: 25,
+        width: 24,
+        height: 24,
+        borderRadius: 50,
+        backgroundColor: '#1E6F9F',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
     form: {
         flexDirection: 'row',
         position: 'absolute',
@@ -52,7 +63,7 @@ export const styles = StyleSheet.create ({
     },
     sectionToDos: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         width: '88%',
         paddingBottom: 15,
         marginTop: 60,

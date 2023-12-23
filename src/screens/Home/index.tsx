@@ -6,6 +6,8 @@ import 'react-native-get-random-values'
 
 import { v4 as uuidv4 } from 'uuid'
 
+import Ionicons from 'react-native-vector-icons/Ionicons'
+
 import { styles } from './styles'
 
 import logo from '../../assets/logo.png'
@@ -23,7 +25,7 @@ export function Home () {
 
     const [isFocused, setFocused] = useState(false)
 
-    const [completeds, setCompleteds] = useState(0)
+    const [darkMode, setDarkMode] = useState(true)
 
     function handleTaskAdd () {
         if (tasks.includes(taskName)) {
@@ -55,27 +57,31 @@ export function Home () {
         ])
     }
 
-    function counterCompleted (checked: boolean) {
-        if(checked) {
-            setCompleteds(completeds + 1);
-        } else {
-            setCompleteds(completeds - 1);
-        }
-      }
+    function darkModeUpdate () {
+        setDarkMode (!darkMode)
+    }
 
     return (
-        <View style = {styles.container}>
-            <View style = {styles.header}>
+        <View style = {[styles.container, {
+            backgroundColor: darkMode ? '#1A1A1A' : '#F2F2F2'
+        }]}>
+            <View style = {[styles.header, {
+                backgroundColor: darkMode ? '#0D0D0D' : '#262626'
+            }]}>
+                <TouchableOpacity style = {styles.buttonMode} onPress = {darkModeUpdate}>
+                    <Ionicons name = {darkMode ? "moon-outline" : "sunny-outline"} color="white" size = {18} />
+                </TouchableOpacity>
                 <Image source = {logo} />
             </View>
 
             <View style = {styles.form}>
                 <TextInput
                     style = {[styles.input, {
-                        borderColor: isFocused ? '#5E60CE' : '#0D0D0D'
+                        borderColor: isFocused ? '#5E60CE' : '#0D0D0D',
+                        backgroundColor: darkMode ? '#0D0D0D' : '#5E60CE'
                     }]}
                     placeholder = 'Adicione uma nova tarefa'
-                    placeholderTextColor = '#808080'
+                    placeholderTextColor = {darkMode ? '#808080' : '#D9D9D9'}
                     onFocus={() => setFocused(true)}
                     onBlur={() => setFocused(false)}
                     selectionColor = '#F2F2F2'
@@ -97,15 +103,6 @@ export function Home () {
                         {tasksNumbers}
                     </Text>
                 </View>
-
-                <View style = {styles.status}>
-                    <Text style = {styles.statusCompleted}>
-                        Concluídas
-                    </Text>
-                    <Text style = {styles.statusNumber}>
-                        {completeds}
-                    </Text>
-                </View>
             </View>
             
             <FlatList 
@@ -115,7 +112,6 @@ export function Home () {
                     <Task 
                         description = {item}
                         onRemove = {() => handleTaskRemove(item)}
-                        onCheck = {(check) => counterCompleted(check)}
                     />
                 )}
                 ListEmptyComponent = {() => (
