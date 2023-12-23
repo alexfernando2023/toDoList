@@ -3,8 +3,9 @@
 ## Aplicação de Lista de Tarefas desenvolvido como Desafio no Curso [Ignite](https://www.rocketseat.com.br/ignite) Trilha React Native da [RocketSeat](https://www.rocketseat.com.br/) com o objetivo de praticar os fundamentos do [React Native](https://reactnative.dev/) no desenvolvimento mobile.
 
 ![Static Badge](https://img.shields.io/badge/Fundamentos-React%20Native-087ea4)
-![Static Badge](https://img.shields.io/badge/To%20Do%20List-00875f)
-![GitHub License](https://img.shields.io/github/license/alexfernando2023/toDoList?link=https%3A%2F%2Fgithub.com%2Falexfernando2023%2FtoDoList)
+![Static Badge](https://img.shields.io/badge/To%20Do%20List-5E60CE)
+![GitHub License](https://img.shields.io/github/license/alexfernando2023/toDoList?link=https%3A%2F%2Fgithub.com%2Falexfernando2023%2FtoDoList%2Fblob%2Fmain%2FLICENSE)
+
 
 ### Pré-requisitos
 
